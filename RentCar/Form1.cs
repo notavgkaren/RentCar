@@ -91,7 +91,7 @@ namespace RentCar
 
         private void modEmpleados_Click(object sender, EventArgs e)
         {
-            EnableButton(sender);
+            OpenChildForm(new Forms.FormEmpleado(), sender, "Empleados");
         }
 
         private void modClientes_Click(object sender, EventArgs e)

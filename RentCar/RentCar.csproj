@@ -79,6 +79,18 @@
     <Compile Include="Forms\FormClienteAddEdit.Designer.cs">
       <DependentUpon>FormClienteAddEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEmpleado.Designer.cs">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEmpleadoAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEmpleadoAddEdit.Designer.cs">
+      <DependentUpon>FormEmpleadoAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormRenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +156,12 @@
     <EmbeddedResource Include="Forms\FormClienteAddEdit.resx">
       <DependentUpon>FormClienteAddEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEmpleadoAddEdit.resx">
+      <DependentUpon>FormEmpleadoAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormRenta.resx">
       <DependentUpon>FormRenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +180,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Cliente.datasource" />
+    <None Include="Properties\DataSources\Empleado.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
