@@ -41,11 +41,9 @@ namespace RentCar.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.chkEstado = new System.Windows.Forms.CheckBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,41 +136,15 @@ namespace RentCar.Forms
             this.label1.TabIndex = 10;
             this.label1.Text = "Nombre";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(76, 261);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Estado";
-            // 
-            // chkEstado
-            // 
-            this.chkEstado.AutoSize = true;
-            this.chkEstado.Checked = true;
-            this.chkEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEstado.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.clienteBindingSource, "Estado", true));
-            this.chkEstado.Location = new System.Drawing.Point(128, 261);
-            this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Size = new System.Drawing.Size(56, 17);
-            this.chkEstado.TabIndex = 5;
-            this.chkEstado.Text = "Activo";
-            this.chkEstado.UseVisualStyleBackColor = true;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnGuardar.Location = new System.Drawing.Point(174, 303);
+            this.btnGuardar.Location = new System.Drawing.Point(174, 252);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(RentCar.Cliente);
             // 
             // label7
             // 
@@ -184,15 +156,17 @@ namespace RentCar.Forms
             this.label7.TabIndex = 13;
             this.label7.Text = "Agregar";
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(RentCar.Cliente);
+            // 
             // FormClienteAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 343);
+            this.ClientSize = new System.Drawing.Size(293, 294);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.chkEstado);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.cbTipoPersona);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtLimite);
@@ -226,8 +200,6 @@ namespace RentCar.Forms
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource clienteBindingSource;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox chkEstado;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label7;
     }

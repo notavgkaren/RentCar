@@ -65,5 +65,18 @@ namespace RentCar.Forms
                 }
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string buscar = txtBuscar.Text;            
+            var query = db.Clientes.Where(q => q.Nombre.Contains(buscar)).ToList();            
+            clienteBindingSource.DataSource = query;           
+        }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            clienteBindingSource.DataSource = db.Clientes.ToList();
+            txtBuscar.Clear();
+        }
     }
 }

@@ -13,7 +13,6 @@ namespace RentCar
     public partial class Form1 : Form
     {
         private Button currentbtn;
-        private int index;
         private Form activeForm;
 
         public Form1()
@@ -32,7 +31,10 @@ namespace RentCar
                     DisableButton();
                     currentbtn = (Button)btnSender;
                     currentbtn.BackColor = Color.FromArgb(143, 193, 189);
-                    currentbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, 
+                        System.Drawing.FontStyle.Bold, 
+                        System.Drawing.GraphicsUnit.Point, 
+                        ((byte)(0)));
 
                 }
             }
@@ -45,7 +47,10 @@ namespace RentCar
                 if (previousBtn.GetType() == typeof(Button))
                 {
                     previousBtn.BackColor = Color.FromArgb(44, 140, 132);
-                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, 
+                        System.Drawing.FontStyle.Regular, 
+                        System.Drawing.GraphicsUnit.Point, 
+                        ((byte)(0)));
                 }
             }
         }
@@ -91,7 +96,7 @@ namespace RentCar
 
         private void modClientes_Click(object sender, EventArgs e)
         {
-            EnableButton(sender);
+            OpenChildForm(new Forms.FormCliente(), sender, "Clientes");
         }
 
         //:(

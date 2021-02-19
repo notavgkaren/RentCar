@@ -131,6 +131,7 @@
     <Compile Include="Tipo_Vehiculo.cs">
       <DependentUpon>RentCarModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utilidades.cs" />
     <Compile Include="Vehiculo.cs">
       <DependentUpon>RentCarModel.tt</DependentUpon>
     </Compile>

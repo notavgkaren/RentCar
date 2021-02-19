@@ -13,6 +13,7 @@ namespace RentCar.Forms
     public partial class FormClienteAddEdit : Form
     {
         RentCarEntities db;
+        bool edit = false;
         public FormClienteAddEdit(Cliente cliente)
         {
             InitializeComponent();
@@ -20,13 +21,16 @@ namespace RentCar.Forms
             if (cliente == null)
             {
                 clienteBindingSource.DataSource = new Cliente();
-                db.Clientes.Add(clienteBindingSource.Current as Cliente);
+                var c = clienteBindingSource.Current as Cliente;
+                c.Estado = true;
+                db.Clientes.Add(c);
             }
             else
             {
                 label7.Text = "Editar";
                 clienteBindingSource.DataSource = cliente;
                 //db.Clientes.Attach(clienteBindingSource.Current as Cliente);
+                edit = true;
             }
         }
 
@@ -34,13 +38,43 @@ namespace RentCar.Forms
         {
             if (DialogResult == DialogResult.OK)
             {
-                if (string.IsNullOrEmpty(txtNombre.Text))
+                //validacion de campos vacios
+                foreach (Control item in this.Controls)
                 {
-                    MessageBox.Show("Favor llene todos los campos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtNombre.Focus();
+                    if (item.GetType() == typeof(TextBox))
+                    {
+                        if (string.IsNullOrEmpty(item.Text))
+                        {
+                            MessageBox.Show("Favor llene todos los campos.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            item.Focus();
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
+                }
+
+                // validacion de cedula
+                bool valida = Utilidades.validaCedula(txtCedula.Text);
+                if (!valida)
+                {
+                    MessageBox.Show("Favor revise la cedula.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtCedula.Focus();
                     e.Cancel = true;
                     return;
                 }
+
+                //completar edicion
+                if (edit)
+                {
+                    var c = clienteBindingSource.Current as Cliente;
+                    var cc = db.Clientes.Where(q => q.ID.Equals(c.ID)).FirstOrDefault();
+                    cc.Cedula = c.Cedula;
+                    cc.LimiteCredito = c.LimiteCredito;
+                    cc.Nombre = c.Nombre;
+                    cc.TarjetaCR = c.TarjetaCR;
+                    cc.TipoPersona = c.TipoPersona;
+                }
+                
                 db.SaveChanges();
                 e.Cancel = false;
             }

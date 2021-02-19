@@ -60,7 +60,7 @@
             this.panelMod.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMod.Location = new System.Drawing.Point(0, 0);
             this.panelMod.Name = "panelMod";
-            this.panelMod.Size = new System.Drawing.Size(200, 450);
+            this.panelMod.Size = new System.Drawing.Size(200, 521);
             this.panelMod.TabIndex = 0;
             // 
             // modClientes
@@ -215,7 +215,7 @@
             this.panelModTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelModTitle.Location = new System.Drawing.Point(200, 0);
             this.panelModTitle.Name = "panelModTitle";
-            this.panelModTitle.Size = new System.Drawing.Size(600, 80);
+            this.panelModTitle.Size = new System.Drawing.Size(664, 80);
             this.panelModTitle.TabIndex = 1;
             // 
             // label3
@@ -224,7 +224,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(227, 23);
+            this.label3.Location = new System.Drawing.Point(234, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 31);
             this.label3.TabIndex = 3;
@@ -237,15 +237,16 @@
             this.panelModContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelModContenido.Location = new System.Drawing.Point(200, 80);
             this.panelModContenido.Name = "panelModContenido";
-            this.panelModContenido.Size = new System.Drawing.Size(600, 370);
+            this.panelModContenido.Size = new System.Drawing.Size(664, 441);
             this.panelModContenido.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(864, 521);
             this.Controls.Add(this.panelModContenido);
             this.Controls.Add(this.panelModTitle);
             this.Controls.Add(this.panelMod);
