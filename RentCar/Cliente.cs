@@ -25,8 +25,8 @@ namespace RentCar
         public string Cedula { get; set; }
         public string TarjetaCR { get; set; }
         public Nullable<int> LimiteCredito { get; set; }
-        public Nullable<bool> TipoPersona { get; set; }
-        public Nullable<bool> Estado { get; set; }
+        public string TipoPersona { get; set; }
+        public Nullable<int> Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Renta> Rentas { get; set; }
