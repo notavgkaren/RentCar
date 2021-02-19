@@ -24,12 +24,46 @@ namespace RentCar.Forms
             clienteBindingSource.DataSource = db.Clientes.ToList();
         }
 
-        //:(
-        private void label1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            using(FormClienteAddEdit form = new FormClienteAddEdit(null))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    clienteBindingSource.DataSource = db.Clientes.ToList();
+                }
+            }
         }
 
-        
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            
+            var obj = clienteBindingSource.Current;
+            if (obj == null)
+                return;
+            
+            using (FormClienteAddEdit form = new FormClienteAddEdit(obj as Cliente))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    clienteBindingSource.DataSource = db.Clientes.ToList();
+                }
+            }
+        }
+
+        private void btnDesactivar_Click(object sender, EventArgs e)
+        {
+            if(clienteBindingSource.Current != null)
+            {
+                var confirm = MessageBox.Show("Seguro que desea desactivar el cliente?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(confirm == DialogResult.Yes)
+                {
+                    var obj = clienteBindingSource.Current as Cliente;
+                    obj.Estado = false;
+                    db.SaveChanges();
+                    clienteBindingSource.DataSource = db.Clientes.ToList();
+                }
+            }
+        }
     }
 }

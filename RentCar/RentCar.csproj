@@ -73,6 +73,12 @@
     <Compile Include="Forms\FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormClienteAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormClienteAddEdit.Designer.cs">
+      <DependentUpon>FormClienteAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormRenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormClienteAddEdit.resx">
+      <DependentUpon>FormClienteAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormRenta.resx">
       <DependentUpon>FormRenta.cs</DependentUpon>
