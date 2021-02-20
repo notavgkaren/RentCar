@@ -18,8 +18,7 @@ namespace RentCar
         public Form1()
         {
             InitializeComponent();
-            OpenChildForm(new Forms.FormRenta(), modRenta, "Renta y Devolucion");
-            
+            OpenChildForm(new Forms.FormRenta(), modRenta, "Renta y Devolucion");            
         }
 
         private void EnableButton(object btnSender)
@@ -86,7 +85,7 @@ namespace RentCar
 
         private void modVehiculos_Click(object sender, EventArgs e)
         {
-            EnableButton(sender);
+            OpenChildForm(new Forms.FormVehiculo(), sender, "Vehiculos");
         }
 
         private void modEmpleados_Click(object sender, EventArgs e)

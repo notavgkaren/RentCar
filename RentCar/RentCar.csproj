@@ -103,6 +103,30 @@
     <Compile Include="Forms\FormReportes.Designer.cs">
       <DependentUpon>FormReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVehiculo.Designer.cs">
+      <DependentUpon>FormVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoTipo.Designer.cs">
+      <DependentUpon>FormVehiculoTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoTipoAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoTipoAddEdit.Designer.cs">
+      <DependentUpon>FormVehiculoTipoAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoVerMas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoVerMas.Designer.cs">
+      <DependentUpon>FormVehiculoVerMas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inspeccion.cs">
       <DependentUpon>RentCarModel.tt</DependentUpon>
     </Compile>
@@ -168,6 +192,18 @@
     <EmbeddedResource Include="Forms\FormReportes.resx">
       <DependentUpon>FormReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVehiculo.resx">
+      <DependentUpon>FormVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVehiculoTipo.resx">
+      <DependentUpon>FormVehiculoTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVehiculoTipoAddEdit.resx">
+      <DependentUpon>FormVehiculoTipoAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVehiculoVerMas.resx">
+      <DependentUpon>FormVehiculoVerMas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -181,6 +217,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Cliente.datasource" />
     <None Include="Properties\DataSources\Empleado.datasource" />
+    <None Include="Properties\DataSources\Tipo_Vehiculo.datasource" />
+    <None Include="Properties\DataSources\Vehiculo.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
