@@ -38,8 +38,9 @@ namespace RentCar.Forms
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnVerMas = new System.Windows.Forms.Button();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chasisNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.motorNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placaNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,12 +48,10 @@ namespace RentCar.Forms
             this.marcaVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoCombustibleVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaVehiculo1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloVehiculo1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoCombustibleVehiculo1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoVehiculo1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +71,7 @@ namespace RentCar.Forms
             this.btnEditar.TabIndex = 25;
             this.btnEditar.Text = "&Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDesactivar
             // 
@@ -81,6 +81,7 @@ namespace RentCar.Forms
             this.btnDesactivar.TabIndex = 21;
             this.btnDesactivar.Text = "&Desactivar";
             this.btnDesactivar.UseVisualStyleBackColor = true;
+            this.btnDesactivar.Click += new System.EventHandler(this.btnDesactivar_Click);
             // 
             // btnRecargar
             // 
@@ -90,6 +91,7 @@ namespace RentCar.Forms
             this.btnRecargar.TabIndex = 22;
             this.btnRecargar.Text = "&Recargar";
             this.btnRecargar.UseVisualStyleBackColor = true;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // btnBuscar
             // 
@@ -99,6 +101,7 @@ namespace RentCar.Forms
             this.btnBuscar.TabIndex = 23;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAgregar
             // 
@@ -108,6 +111,7 @@ namespace RentCar.Forms
             this.btnAgregar.TabIndex = 24;
             this.btnAgregar.Text = "&Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dataGridView1
             // 
@@ -118,8 +122,8 @@ namespace RentCar.Forms
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
+            this.estadoDataGridViewTextBoxColumn,
             this.chasisNumDataGridViewTextBoxColumn,
             this.motorNumDataGridViewTextBoxColumn,
             this.placaNumDataGridViewTextBoxColumn,
@@ -127,7 +131,6 @@ namespace RentCar.Forms
             this.marcaVehiculoDataGridViewTextBoxColumn,
             this.modeloVehiculoDataGridViewTextBoxColumn,
             this.tipoCombustibleVehiculoDataGridViewTextBoxColumn,
-            this.estadoDataGridViewTextBoxColumn,
             this.marcaVehiculo1DataGridViewTextBoxColumn,
             this.modeloVehiculo1DataGridViewTextBoxColumn,
             this.tipoCombustibleVehiculo1DataGridViewTextBoxColumn,
@@ -148,17 +151,21 @@ namespace RentCar.Forms
             this.btnVerMas.UseVisualStyleBackColor = true;
             this.btnVerMas.Click += new System.EventHandler(this.btnVerMas_Click);
             // 
-            // iDDataGridViewTextBoxColumn
+            // vehiculoBindingSource
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.vehiculoBindingSource.DataSource = typeof(RentCar.Vehiculo);
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
             this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
             // 
             // chasisNumDataGridViewTextBoxColumn
             // 
@@ -202,12 +209,6 @@ namespace RentCar.Forms
             this.tipoCombustibleVehiculoDataGridViewTextBoxColumn.HeaderText = "Tipo_Combustible_Vehiculo";
             this.tipoCombustibleVehiculoDataGridViewTextBoxColumn.Name = "tipoCombustibleVehiculoDataGridViewTextBoxColumn";
             // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            // 
             // marcaVehiculo1DataGridViewTextBoxColumn
             // 
             this.marcaVehiculo1DataGridViewTextBoxColumn.DataPropertyName = "Marca_Vehiculo1";
@@ -232,10 +233,6 @@ namespace RentCar.Forms
             this.tipoVehiculo1DataGridViewTextBoxColumn.HeaderText = "Tipo_Vehiculo1";
             this.tipoVehiculo1DataGridViewTextBoxColumn.Name = "tipoVehiculo1DataGridViewTextBoxColumn";
             // 
-            // vehiculoBindingSource
-            // 
-            this.vehiculoBindingSource.DataSource = typeof(RentCar.Vehiculo);
-            // 
             // FormVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,6 +248,7 @@ namespace RentCar.Forms
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormVehiculo";
             this.Text = "FormVehiculo";
+            this.Load += new System.EventHandler(this.FormVehiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculoBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -268,8 +266,9 @@ namespace RentCar.Forms
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource vehiculoBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnVerMas;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn chasisNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn motorNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn placaNumDataGridViewTextBoxColumn;
@@ -277,11 +276,9 @@ namespace RentCar.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaVehiculoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloVehiculoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoCombustibleVehiculoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaVehiculo1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloVehiculo1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoCombustibleVehiculo1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoVehiculo1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnVerMas;
     }
 }

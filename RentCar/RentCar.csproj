@@ -109,6 +109,12 @@
     <Compile Include="Forms\FormVehiculo.Designer.cs">
       <DependentUpon>FormVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormVehiculoAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoAddEdit.Designer.cs">
+      <DependentUpon>FormVehiculoAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormVehiculoCombustible.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVehiculo.resx">
       <DependentUpon>FormVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVehiculoAddEdit.resx">
+      <DependentUpon>FormVehiculoAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVehiculoCombustible.resx">
       <DependentUpon>FormVehiculoCombustible.cs</DependentUpon>
