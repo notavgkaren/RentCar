@@ -29,7 +29,6 @@ namespace RentCar.Forms
             {
                 label7.Text = "Editar";
                 clienteBindingSource.DataSource = cliente;
-                //db.Clientes.Attach(clienteBindingSource.Current as Cliente);
                 edit = true;
             }
         }

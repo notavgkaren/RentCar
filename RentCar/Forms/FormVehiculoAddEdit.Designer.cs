@@ -33,10 +33,8 @@ namespace RentCar.Forms
             this.label7 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.cbCombustible = new System.Windows.Forms.ComboBox();
-            this.tipoCombustibleVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.txtLimite = new System.Windows.Forms.TextBox();
-            this.vehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.txtChasis = new System.Windows.Forms.TextBox();
             this.txtMotor = new System.Windows.Forms.TextBox();
@@ -48,12 +46,14 @@ namespace RentCar.Forms
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbTipo = new System.Windows.Forms.ComboBox();
-            this.tipoVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbMarca = new System.Windows.Forms.ComboBox();
-            this.marcaVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbModelo = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoCombustibleVehiculoBindingSource)).BeginInit();
+            this.vehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoCombustibleVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marcaVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.vehiculoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoCombustibleVehiculoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaVehiculoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -80,18 +80,12 @@ namespace RentCar.Forms
             // 
             // cbCombustible
             // 
-            this.cbCombustible.DataSource = this.tipoCombustibleVehiculoBindingSource;
-            this.cbCombustible.DisplayMember = "Descripcion";
             this.cbCombustible.FormattingEnabled = true;
             this.cbCombustible.Location = new System.Drawing.Point(126, 348);
             this.cbCombustible.Name = "cbCombustible";
             this.cbCombustible.Size = new System.Drawing.Size(163, 21);
             this.cbCombustible.TabIndex = 20;
             this.cbCombustible.ValueMember = "ID";
-            // 
-            // tipoCombustibleVehiculoBindingSource
-            // 
-            this.tipoCombustibleVehiculoBindingSource.DataSource = typeof(RentCar.Tipo_Combustible_Vehiculo);
             // 
             // label5
             // 
@@ -109,10 +103,6 @@ namespace RentCar.Forms
             this.txtLimite.Name = "txtLimite";
             this.txtLimite.Size = new System.Drawing.Size(163, 20);
             this.txtLimite.TabIndex = 19;
-            // 
-            // vehiculoBindingSource
-            // 
-            this.vehiculoBindingSource.DataSource = typeof(RentCar.Vehiculo);
             // 
             // label4
             // 
@@ -204,35 +194,21 @@ namespace RentCar.Forms
             // 
             // cbTipo
             // 
-            this.cbTipo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculoBindingSource, "Tipo_Vehiculo1", true));
-            this.cbTipo.DataSource = this.tipoVehiculoBindingSource;
-            this.cbTipo.DisplayMember = "Descripcion";
             this.cbTipo.FormattingEnabled = true;
             this.cbTipo.Location = new System.Drawing.Point(126, 241);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(163, 21);
             this.cbTipo.TabIndex = 20;
-            this.cbTipo.ValueMember = "ID";
-            // 
-            // tipoVehiculoBindingSource
-            // 
-            this.tipoVehiculoBindingSource.DataSource = typeof(RentCar.Tipo_Vehiculo);
             // 
             // cbMarca
             // 
-            this.cbMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculoBindingSource, "Marca_Vehiculo1", true));
-            this.cbMarca.DataSource = this.marcaVehiculoBindingSource;
-            this.cbMarca.DisplayMember = "Descripcion";
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(126, 275);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(163, 21);
             this.cbMarca.TabIndex = 20;
             this.cbMarca.ValueMember = "ID";
-            // 
-            // marcaVehiculoBindingSource
-            // 
-            this.marcaVehiculoBindingSource.DataSource = typeof(RentCar.Marca_Vehiculo);
+            this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.cbMarca_SelectedIndexChanged);
             // 
             // cbModelo
             // 
@@ -241,6 +217,22 @@ namespace RentCar.Forms
             this.cbModelo.Name = "cbModelo";
             this.cbModelo.Size = new System.Drawing.Size(163, 21);
             this.cbModelo.TabIndex = 20;
+            // 
+            // vehiculoBindingSource
+            // 
+            this.vehiculoBindingSource.DataSource = typeof(RentCar.Vehiculo);
+            // 
+            // tipoCombustibleVehiculoBindingSource
+            // 
+            this.tipoCombustibleVehiculoBindingSource.DataSource = typeof(RentCar.Tipo_Combustible_Vehiculo);
+            // 
+            // tipoVehiculoBindingSource
+            // 
+            this.tipoVehiculoBindingSource.DataSource = typeof(RentCar.Tipo_Vehiculo);
+            // 
+            // marcaVehiculoBindingSource
+            // 
+            this.marcaVehiculoBindingSource.DataSource = typeof(RentCar.Marca_Vehiculo);
             // 
             // FormVehiculoAddEdit
             // 
@@ -268,8 +260,8 @@ namespace RentCar.Forms
             this.Name = "FormVehiculoAddEdit";
             this.Text = "Agregar/Editar Vehiculo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormVehiculoAddEdit_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.tipoCombustibleVehiculoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehiculoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoCombustibleVehiculoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoVehiculoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaVehiculoBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -37,7 +37,6 @@ namespace RentCar.Forms
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
             var obj = clienteBindingSource.Current;
             if (obj == null)
                 return;

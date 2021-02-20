@@ -60,13 +60,14 @@ namespace RentCar.Forms
                 }
 
                 //completar edicion
-                var c = modeloVehiculoBindingSource.Current as Modelo_Vehiculo;
+                var c = modeloVehiculoBindingSource.Current as Modelo_Vehiculo;                
+                c.marca = (int?)cbMarca.SelectedValue;
                 if (edit)
                 {                    
                     var cc = db.Modelo_Vehiculo.Where(q => q.ID.Equals(c.ID)).FirstOrDefault();
-                    cc.Descripcion = c.Descripcion;                    
+                    cc.Descripcion = c.Descripcion;
+                    cc.marca = c.marca;                    
                 }
-                c.marca = (int?)cbMarca.SelectedValue;
                 if (!edit)
                 {
                     db.Modelo_Vehiculo.Add(c);

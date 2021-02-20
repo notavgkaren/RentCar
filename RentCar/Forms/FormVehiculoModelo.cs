@@ -52,7 +52,7 @@ namespace RentCar.Forms
             int o = (int) dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value;
             var obj = db.Modelo_Vehiculo.Select(q => q).Where(q => q.ID == o).FirstOrDefault();
             if (obj == null) return;
-
+            //mandar el objeto encontrado al form de edicion
             using (FormVehiculoModeloAddEdit form = new FormVehiculoModeloAddEdit(obj as Modelo_Vehiculo))
             {
 
