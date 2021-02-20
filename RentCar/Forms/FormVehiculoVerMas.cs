@@ -37,7 +37,8 @@ namespace RentCar.Forms
 
         private void btnCombustible_Click(object sender, EventArgs e)
         {
-
+            var form = new FormVehiculoCombustible();
+            form.Show();
         }
     }
 }
