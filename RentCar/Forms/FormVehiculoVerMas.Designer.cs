@@ -30,11 +30,11 @@ namespace RentCar.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnTipo = new System.Windows.Forms.Button();
-            this.btnMarcas = new System.Windows.Forms.Button();
-            this.btnModelos = new System.Windows.Forms.Button();
             this.btnCombustible = new System.Windows.Forms.Button();
+            this.btnModelos = new System.Windows.Forms.Button();
+            this.btnMarcas = new System.Windows.Forms.Button();
+            this.btnTipo = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,15 +54,38 @@ namespace RentCar.Forms
             this.panel1.Size = new System.Drawing.Size(246, 334);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // btnCombustible
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 70);
-            this.panel2.TabIndex = 1;
+            this.btnCombustible.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCombustible.Location = new System.Drawing.Point(0, 226);
+            this.btnCombustible.Name = "btnCombustible";
+            this.btnCombustible.Size = new System.Drawing.Size(246, 52);
+            this.btnCombustible.TabIndex = 5;
+            this.btnCombustible.Text = "Tipos de &Combustible";
+            this.btnCombustible.UseVisualStyleBackColor = true;
+            this.btnCombustible.Click += new System.EventHandler(this.btnCombustible_Click);
+            // 
+            // btnModelos
+            // 
+            this.btnModelos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModelos.Location = new System.Drawing.Point(0, 174);
+            this.btnModelos.Name = "btnModelos";
+            this.btnModelos.Size = new System.Drawing.Size(246, 52);
+            this.btnModelos.TabIndex = 4;
+            this.btnModelos.Text = "&Modelos";
+            this.btnModelos.UseVisualStyleBackColor = true;
+            this.btnModelos.Click += new System.EventHandler(this.btnModelos_Click);
+            // 
+            // btnMarcas
+            // 
+            this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMarcas.Location = new System.Drawing.Point(0, 122);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Size = new System.Drawing.Size(246, 52);
+            this.btnMarcas.TabIndex = 3;
+            this.btnMarcas.Text = "&Marcas";
+            this.btnMarcas.UseVisualStyleBackColor = true;
+            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
             // 
             // btnTipo
             // 
@@ -75,35 +98,15 @@ namespace RentCar.Forms
             this.btnTipo.UseVisualStyleBackColor = true;
             this.btnTipo.Click += new System.EventHandler(this.btnTipo_Click);
             // 
-            // btnMarcas
+            // panel2
             // 
-            this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMarcas.Location = new System.Drawing.Point(0, 122);
-            this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Size = new System.Drawing.Size(246, 52);
-            this.btnMarcas.TabIndex = 3;
-            this.btnMarcas.Text = "&Marcas";
-            this.btnMarcas.UseVisualStyleBackColor = true;
-            // 
-            // btnModelos
-            // 
-            this.btnModelos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnModelos.Location = new System.Drawing.Point(0, 174);
-            this.btnModelos.Name = "btnModelos";
-            this.btnModelos.Size = new System.Drawing.Size(246, 52);
-            this.btnModelos.TabIndex = 4;
-            this.btnModelos.Text = "&Modelos";
-            this.btnModelos.UseVisualStyleBackColor = true;
-            // 
-            // btnCombustible
-            // 
-            this.btnCombustible.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCombustible.Location = new System.Drawing.Point(0, 226);
-            this.btnCombustible.Name = "btnCombustible";
-            this.btnCombustible.Size = new System.Drawing.Size(246, 52);
-            this.btnCombustible.TabIndex = 5;
-            this.btnCombustible.Text = "Tipos de &Combustible";
-            this.btnCombustible.UseVisualStyleBackColor = true;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(246, 70);
+            this.panel2.TabIndex = 1;
             // 
             // label1
             // 

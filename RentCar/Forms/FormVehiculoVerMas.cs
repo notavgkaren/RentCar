@@ -22,5 +22,21 @@ namespace RentCar.Forms
             var form = new FormVehiculoTipo();
             form.Show();
         }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+            var form = new FormVehiculoMarca();
+            form.Show();
+        }
+
+        private void btnModelos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCombustible_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
