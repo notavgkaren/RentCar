@@ -30,6 +30,7 @@ namespace RentCar
         public Nullable<int> CantDias { get; set; }
         public string Comentario { get; set; }
         public Nullable<bool> Estado { get; set; }
+        public Nullable<int> inspeccion { get; set; }
     
         public virtual Cliente Cliente1 { get; set; }
         public virtual Empleado Empleado1 { get; set; }

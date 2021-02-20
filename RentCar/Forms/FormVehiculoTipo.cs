@@ -13,7 +13,6 @@ namespace RentCar.Forms
     public partial class FormVehiculoTipo : Form
     {
         RentCarEntities db;
-        bool editar;
         public FormVehiculoTipo()
         {
             InitializeComponent();

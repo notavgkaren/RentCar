@@ -23,10 +23,13 @@ namespace RentCar
         public Nullable<bool> TieneGomaRepuesto { get; set; }
         public Nullable<bool> TieneGato { get; set; }
         public Nullable<bool> TieneRoturaCristal { get; set; }
-        public byte[] EstadoGomas { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
         public string Comentario { get; set; }
         public string Estado { get; set; }
+        public Nullable<bool> Goma1 { get; set; }
+        public Nullable<bool> Goma2 { get; set; }
+        public Nullable<bool> Goma3 { get; set; }
+        public Nullable<bool> Goma4 { get; set; }
     
         public virtual Empleado Empleado1 { get; set; }
         public virtual Renta Renta1 { get; set; }

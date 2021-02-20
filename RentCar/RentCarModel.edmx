@@ -36,16 +36,19 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Empleado" Type="int" />
           <Property Name="Vehiculo" Type="int" />
-          <Property Name="Renta" Type="int" />
           <Property Name="TieneRalladuras" Type="bit" />
           <Property Name="CantCombustible" Type="varchar" MaxLength="5" />
           <Property Name="TieneGomaRepuesto" Type="bit" />
           <Property Name="TieneGato" Type="bit" />
           <Property Name="TieneRoturaCristal" Type="bit" />
-          <Property Name="EstadoGomas" Type="binary" MaxLength="1" />
           <Property Name="Fecha" Type="date" />
           <Property Name="Comentario" Type="text" />
           <Property Name="Estado" Type="varchar" MaxLength="10" />
+          <Property Name="Goma1" Type="bit" />
+          <Property Name="Goma2" Type="bit" />
+          <Property Name="Goma3" Type="bit" />
+          <Property Name="Goma4" Type="bit" />
+          <Property Name="Renta" Type="int" />
         </EntityType>
         <EntityType Name="Marca_Vehiculo">
           <Key>
@@ -78,6 +81,7 @@
           <Property Name="CantDias" Type="int" />
           <Property Name="Comentario" Type="text" />
           <Property Name="Estado" Type="bit" />
+          <Property Name="inspeccion" Type="int" />
         </EntityType>
         <EntityType Name="Tipo_Combustible_Vehiculo">
           <Key>
@@ -122,7 +126,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Inspeccio__Renta__3E52440B">
+        <Association Name="FK__Inspeccio__Renta__4316F928">
           <End Role="Renta" Type="Self.Renta" Multiplicity="0..1" />
           <End Role="Inspeccion" Type="Self.Inspeccion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -256,7 +260,7 @@
             <End Role="Empleado" EntitySet="Empleado" />
             <End Role="Inspeccion" EntitySet="Inspeccion" />
           </AssociationSet>
-          <AssociationSet Name="FK__Inspeccio__Renta__3E52440B" Association="Self.FK__Inspeccio__Renta__3E52440B">
+          <AssociationSet Name="FK__Inspeccio__Renta__4316F928" Association="Self.FK__Inspeccio__Renta__4316F928">
             <End Role="Renta" EntitySet="Renta" />
             <End Role="Inspeccion" EntitySet="Inspeccion" />
           </AssociationSet>
@@ -341,13 +345,16 @@
           <Property Name="TieneGomaRepuesto" Type="Boolean" />
           <Property Name="TieneGato" Type="Boolean" />
           <Property Name="TieneRoturaCristal" Type="Boolean" />
-          <Property Name="EstadoGomas" Type="Binary" MaxLength="1" FixedLength="true" />
           <Property Name="Fecha" Type="DateTime" Precision="0" />
           <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Estado" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Empleado1" Relationship="Self.FK__Inspeccio__Emple__3C69FB99" FromRole="Inspeccion" ToRole="Empleado" />
           <NavigationProperty Name="Renta1" Relationship="Self.FK__Inspeccio__Renta__3E52440B" FromRole="Inspeccion" ToRole="Renta" />
           <NavigationProperty Name="Vehiculo1" Relationship="Self.FK__Inspeccio__Vehic__3D5E1FD2" FromRole="Inspeccion" ToRole="Vehiculo" />
+          <Property Name="Goma1" Type="Boolean" />
+          <Property Name="Goma2" Type="Boolean" />
+          <Property Name="Goma3" Type="Boolean" />
+          <Property Name="Goma4" Type="Boolean" />
         </EntityType>
         <EntityType Name="Marca_Vehiculo">
           <Key>
@@ -388,6 +395,7 @@
           <NavigationProperty Name="Empleado1" Relationship="Self.FK__Renta__Empleado__37A5467C" FromRole="Renta" ToRole="Empleado" />
           <NavigationProperty Name="Inspeccions" Relationship="Self.FK__Inspeccio__Renta__3E52440B" FromRole="Renta" ToRole="Inspeccion" />
           <NavigationProperty Name="Vehiculo1" Relationship="Self.FK__Renta__Vehiculo__38996AB5" FromRole="Renta" ToRole="Vehiculo" />
+          <Property Name="inspeccion" Type="Int32" />
         </EntityType>
         <EntityType Name="Tipo_Combustible_Vehiculo">
           <Key>
@@ -650,6 +658,10 @@
           <EntitySetMapping Name="Inspeccions">
             <EntityTypeMapping TypeName="RentCarModel.Inspeccion">
               <MappingFragment StoreEntitySet="Inspeccion">
+                <ScalarProperty Name="Goma4" ColumnName="Goma4" />
+                <ScalarProperty Name="Goma3" ColumnName="Goma3" />
+                <ScalarProperty Name="Goma2" ColumnName="Goma2" />
+                <ScalarProperty Name="Goma1" ColumnName="Goma1" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Empleado" ColumnName="Empleado" />
                 <ScalarProperty Name="Vehiculo" ColumnName="Vehiculo" />
@@ -659,7 +671,6 @@
                 <ScalarProperty Name="TieneGomaRepuesto" ColumnName="TieneGomaRepuesto" />
                 <ScalarProperty Name="TieneGato" ColumnName="TieneGato" />
                 <ScalarProperty Name="TieneRoturaCristal" ColumnName="TieneRoturaCristal" />
-                <ScalarProperty Name="EstadoGomas" ColumnName="EstadoGomas" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Comentario" ColumnName="Comentario" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
@@ -688,6 +699,7 @@
           <EntitySetMapping Name="Rentas">
             <EntityTypeMapping TypeName="RentCarModel.Renta">
               <MappingFragment StoreEntitySet="Renta">
+                <ScalarProperty Name="inspeccion" ColumnName="inspeccion" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Empleado" ColumnName="Empleado" />
                 <ScalarProperty Name="Vehiculo" ColumnName="Vehiculo" />
