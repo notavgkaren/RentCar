@@ -62,7 +62,7 @@ namespace RentCar.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 9);
+            this.label7.Location = new System.Drawing.Point(14, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 31);
             this.label7.TabIndex = 25;
@@ -71,7 +71,7 @@ namespace RentCar.Forms
             // btnGuardar
             // 
             this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnGuardar.Location = new System.Drawing.Point(273, 386);
+            this.btnGuardar.Location = new System.Drawing.Point(214, 375);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 21;
@@ -83,9 +83,9 @@ namespace RentCar.Forms
             this.cbCombustible.DataSource = this.tipoCombustibleVehiculoBindingSource;
             this.cbCombustible.DisplayMember = "Descripcion";
             this.cbCombustible.FormattingEnabled = true;
-            this.cbCombustible.Location = new System.Drawing.Point(112, 351);
+            this.cbCombustible.Location = new System.Drawing.Point(126, 348);
             this.cbCombustible.Name = "cbCombustible";
-            this.cbCombustible.Size = new System.Drawing.Size(121, 21);
+            this.cbCombustible.Size = new System.Drawing.Size(163, 21);
             this.cbCombustible.TabIndex = 20;
             this.cbCombustible.ValueMember = "ID";
             // 
@@ -96,7 +96,7 @@ namespace RentCar.Forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 354);
+            this.label5.Location = new System.Drawing.Point(15, 351);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 13);
             this.label5.TabIndex = 16;
@@ -105,9 +105,9 @@ namespace RentCar.Forms
             // txtLimite
             // 
             this.txtLimite.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculoBindingSource, "PlacaNum", true));
-            this.txtLimite.Location = new System.Drawing.Point(112, 205);
+            this.txtLimite.Location = new System.Drawing.Point(126, 205);
             this.txtLimite.Name = "txtLimite";
-            this.txtLimite.Size = new System.Drawing.Size(121, 20);
+            this.txtLimite.Size = new System.Drawing.Size(163, 20);
             this.txtLimite.TabIndex = 19;
             // 
             // vehiculoBindingSource
@@ -126,17 +126,17 @@ namespace RentCar.Forms
             // txtChasis
             // 
             this.txtChasis.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculoBindingSource, "ChasisNum", true));
-            this.txtChasis.Location = new System.Drawing.Point(112, 134);
+            this.txtChasis.Location = new System.Drawing.Point(126, 134);
             this.txtChasis.Name = "txtChasis";
-            this.txtChasis.Size = new System.Drawing.Size(121, 20);
+            this.txtChasis.Size = new System.Drawing.Size(163, 20);
             this.txtChasis.TabIndex = 17;
             // 
             // txtMotor
             // 
             this.txtMotor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculoBindingSource, "MotorNum", true));
-            this.txtMotor.Location = new System.Drawing.Point(112, 168);
+            this.txtMotor.Location = new System.Drawing.Point(126, 168);
             this.txtMotor.Name = "txtMotor";
-            this.txtMotor.Size = new System.Drawing.Size(121, 20);
+            this.txtMotor.Size = new System.Drawing.Size(163, 20);
             this.txtMotor.TabIndex = 18;
             // 
             // label2
@@ -160,9 +160,10 @@ namespace RentCar.Forms
             // txtDescripcion
             // 
             this.txtDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiculoBindingSource, "Descripcion", true));
-            this.txtDescripcion.Location = new System.Drawing.Point(112, 56);
+            this.txtDescripcion.Location = new System.Drawing.Point(126, 56);
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(236, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(163, 61);
             this.txtDescripcion.TabIndex = 15;
             // 
             // label1
@@ -207,9 +208,9 @@ namespace RentCar.Forms
             this.cbTipo.DataSource = this.tipoVehiculoBindingSource;
             this.cbTipo.DisplayMember = "Descripcion";
             this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Location = new System.Drawing.Point(112, 241);
+            this.cbTipo.Location = new System.Drawing.Point(126, 241);
             this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cbTipo.Size = new System.Drawing.Size(163, 21);
             this.cbTipo.TabIndex = 20;
             this.cbTipo.ValueMember = "ID";
             // 
@@ -223,9 +224,9 @@ namespace RentCar.Forms
             this.cbMarca.DataSource = this.marcaVehiculoBindingSource;
             this.cbMarca.DisplayMember = "Descripcion";
             this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(112, 275);
+            this.cbMarca.Location = new System.Drawing.Point(126, 275);
             this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Size = new System.Drawing.Size(121, 21);
+            this.cbMarca.Size = new System.Drawing.Size(163, 21);
             this.cbMarca.TabIndex = 20;
             this.cbMarca.ValueMember = "ID";
             // 
@@ -236,16 +237,16 @@ namespace RentCar.Forms
             // cbModelo
             // 
             this.cbModelo.FormattingEnabled = true;
-            this.cbModelo.Location = new System.Drawing.Point(112, 307);
+            this.cbModelo.Location = new System.Drawing.Point(126, 312);
             this.cbModelo.Name = "cbModelo";
-            this.cbModelo.Size = new System.Drawing.Size(121, 21);
+            this.cbModelo.Size = new System.Drawing.Size(163, 21);
             this.cbModelo.TabIndex = 20;
             // 
             // FormVehiculoAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 450);
+            this.ClientSize = new System.Drawing.Size(309, 419);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);

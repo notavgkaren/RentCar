@@ -18,13 +18,19 @@ namespace RentCar.Forms
         {
             InitializeComponent();
             db = new RentCarEntities();
+            //llenar combobox
+            #region fill combobox
+            var marcas = db.Marca_Vehiculo.Where(q=>q.Estado.ToString()=="true").Select(q => q).ToList();
+            cbMarca.DisplayMember = "Descripcion";
+            cbMarca.ValueMember = "ID";
+            cbMarca.DataSource = marcas;
+            #endregion
+            //crear o editar
             if (modelo == null)
             {
                 modeloVehiculoBindingSource.DataSource = new Modelo_Vehiculo();
                 var m = modeloVehiculoBindingSource.Current as Modelo_Vehiculo;
                 m.Estado = true;
-                //m.marca = (int?)cbMarca.SelectedValue;
-                db.Modelo_Vehiculo.Add(modelo);
             }
             else
             {
@@ -61,6 +67,10 @@ namespace RentCar.Forms
                     cc.Descripcion = c.Descripcion;                    
                 }
                 c.marca = (int?)cbMarca.SelectedValue;
+                if (!edit)
+                {
+                    db.Modelo_Vehiculo.Add(c);
+                }
                 db.SaveChanges();
                 e.Cancel = false;
             }

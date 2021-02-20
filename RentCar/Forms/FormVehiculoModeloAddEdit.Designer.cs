@@ -33,10 +33,10 @@ namespace RentCar.Forms
             this.label7 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.modeloVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbMarca = new System.Windows.Forms.ComboBox();
-            this.modeloVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.marcaVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.modeloVehiculoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaVehiculoBindingSource)).BeginInit();
@@ -70,6 +70,10 @@ namespace RentCar.Forms
             this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
             this.txtDescripcion.TabIndex = 25;
             // 
+            // modeloVehiculoBindingSource
+            // 
+            this.modeloVehiculoBindingSource.DataSource = typeof(RentCar.Modelo_Vehiculo);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -90,16 +94,11 @@ namespace RentCar.Forms
             // 
             // cbMarca
             // 
-            this.cbMarca.DataSource = this.marcaVehiculoBindingSource;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(112, 55);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(121, 21);
             this.cbMarca.TabIndex = 31;
-            // 
-            // modeloVehiculoBindingSource
-            // 
-            this.modeloVehiculoBindingSource.DataSource = typeof(RentCar.Modelo_Vehiculo);
             // 
             // marcaVehiculoBindingSource
             // 

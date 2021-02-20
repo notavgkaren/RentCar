@@ -20,48 +20,63 @@ namespace RentCar.Forms
 
         private void FormVehiculoModelo_Load(object sender, EventArgs e)
         {
-            db = new RentCarEntities();
-            //var m = db.Modelo_Vehiculo.Select(q => q.marca);
-            modeloVehiculoBindingSource1.DataSource = db.Modelo_Vehiculo.ToList();
+            db = new RentCarEntities();            
+            //get modelos
+            var ds = from modelo in db.Modelo_Vehiculo.Select(q => q)
+                           join marca in db.Marca_Vehiculo.Select(q => q) on modelo.marca equals marca.ID
+                           select new
+                           {
+                               ID = modelo.ID,
+                               Marca = marca.Descripcion,
+                               Descripcion = modelo.Descripcion,
+                               Estado = modelo.Estado
+                           };
+            //map columns
+            dataGridView1.DataSource = ds.ToList();   
         }
+
         private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            using(FormVehiculoModeloAddEdit form = new FormVehiculoModeloAddEdit(null))
-            {
+        {            
+            using (FormVehiculoModeloAddEdit form = new FormVehiculoModeloAddEdit(null))
+            {                
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    modeloVehiculoBindingSource1.DataSource = db.Clientes.ToList();
+                    FormVehiculoModelo_Load(sender, e);
                 }
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            var m = modeloVehiculoBindingSource1.Current;
-            if (m == null) return;
+            //buscar objeto seleccionado en db
+            int o = (int) dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value;
+            var obj = db.Modelo_Vehiculo.Select(q => q).Where(q => q.ID == o).FirstOrDefault();
+            if (obj == null) return;
 
-            using (FormVehiculoModeloAddEdit form = new FormVehiculoModeloAddEdit(m as Modelo_Vehiculo))
+            using (FormVehiculoModeloAddEdit form = new FormVehiculoModeloAddEdit(obj as Modelo_Vehiculo))
             {
+
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    modeloVehiculoBindingSource1.DataSource = db.Clientes.ToList();
+                    FormVehiculoModelo_Load(sender, e);
                 }
             }
         }
 
         private void btnDesactivar_Click(object sender, EventArgs e)
         {
-            if (modeloVehiculoBindingSource1.Current != null)
+            int o = (int)dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex].Cells[0].Value;
+            var obj = db.Modelo_Vehiculo.Select(q => q).Where(q => q.ID == o).FirstOrDefault();
+            if (obj == null) return;
+
+            var confirm = MessageBox.Show("Seguro que desea desactivar el modelo?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
             {
-                var confirm = MessageBox.Show("Seguro que desea desactivar el modelo?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (confirm == DialogResult.Yes)
-                {
-                    var obj = modeloVehiculoBindingSource1.Current as Modelo_Vehiculo;
-                    obj.Estado = false;
-                    db.SaveChanges();
-                    modeloVehiculoBindingSource1.DataSource = db.Modelo_Vehiculo.ToList();
-                }
+                obj.Estado = false;
+                db.SaveChanges();
+                FormVehiculoModelo_Load(sender, e);
             }
+            
         }
     }
 }
