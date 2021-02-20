@@ -23,8 +23,10 @@ namespace RentCar
         public int ID { get; set; }
         public string Descripcion { get; set; }
         public Nullable<bool> Estado { get; set; }
+        public Nullable<int> marca { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vehiculo> Vehiculoes { get; set; }
+        public virtual Marca_Vehiculo Marca_Vehiculo { get; set; }
     }
 }

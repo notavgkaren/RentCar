@@ -24,6 +24,7 @@
         <AssociationConnector Association="RentCarModel.FK__Renta__Vehiculo__38996AB5" ManuallyRouted="false" />
         <AssociationConnector Association="RentCarModel.FK__Vehiculo__Tipo_C__34C8D9D1" ManuallyRouted="false" />
         <AssociationConnector Association="RentCarModel.FK__Vehiculo__Tipo_V__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="RentCarModel.FK__Modelo_Ve__marca__3F466844" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

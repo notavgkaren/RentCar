@@ -62,6 +62,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="20" />
           <Property Name="Estado" Type="bit" />
+          <Property Name="marca" Type="int" />
         </EntityType>
         <EntityType Name="Renta">
           <Key>
@@ -142,6 +143,18 @@
             </Principal>
             <Dependent Role="Inspeccion">
               <PropertyRef Name="Vehiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Modelo_Ve__marca__3F466844">
+          <End Role="Marca_Vehiculo" Type="Self.Marca_Vehiculo" Multiplicity="0..1" />
+          <End Role="Modelo_Vehiculo" Type="Self.Modelo_Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca_Vehiculo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Modelo_Vehiculo">
+              <PropertyRef Name="marca" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -251,6 +264,10 @@
             <End Role="Vehiculo" EntitySet="Vehiculo" />
             <End Role="Inspeccion" EntitySet="Inspeccion" />
           </AssociationSet>
+          <AssociationSet Name="FK__Modelo_Ve__marca__3F466844" Association="Self.FK__Modelo_Ve__marca__3F466844">
+            <End Role="Marca_Vehiculo" EntitySet="Marca_Vehiculo" />
+            <End Role="Modelo_Vehiculo" EntitySet="Modelo_Vehiculo" />
+          </AssociationSet>
           <AssociationSet Name="FK__Renta__Cliente__398D8EEE" Association="Self.FK__Renta__Cliente__398D8EEE">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Renta" EntitySet="Renta" />
@@ -340,6 +357,7 @@
           <Property Name="Descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Estado" Type="Boolean" />
           <NavigationProperty Name="Vehiculoes" Relationship="Self.FK__Vehiculo__Marca___32E0915F" FromRole="Marca_Vehiculo" ToRole="Vehiculo" />
+          <NavigationProperty Name="Modelo_Vehiculo" Relationship="RentCarModel.FK__Modelo_Ve__marca__3F466844" FromRole="Marca_Vehiculo" ToRole="Modelo_Vehiculo" />
         </EntityType>
         <EntityType Name="Modelo_Vehiculo">
           <Key>
@@ -349,6 +367,8 @@
           <Property Name="Descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Estado" Type="Boolean" />
           <NavigationProperty Name="Vehiculoes" Relationship="Self.FK__Vehiculo__Modelo__33D4B598" FromRole="Modelo_Vehiculo" ToRole="Vehiculo" />
+          <Property Name="marca" Type="Int32" />
+          <NavigationProperty Name="Marca_Vehiculo" Relationship="RentCarModel.FK__Modelo_Ve__marca__3F466844" FromRole="Modelo_Vehiculo" ToRole="Marca_Vehiculo" />
         </EntityType>
         <EntityType Name="Renta">
           <Key>
@@ -578,7 +598,23 @@
             <End Role="Tipo_Vehiculo" EntitySet="Tipo_Vehiculo" />
             <End Role="Vehiculo" EntitySet="Vehiculoes" />
           </AssociationSet>
+          <AssociationSet Name="FK__Modelo_Ve__marca__3F466844" Association="RentCarModel.FK__Modelo_Ve__marca__3F466844">
+            <End Role="Marca_Vehiculo" EntitySet="Marca_Vehiculo" />
+            <End Role="Modelo_Vehiculo" EntitySet="Modelo_Vehiculo" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK__Modelo_Ve__marca__3F466844">
+          <End Type="RentCarModel.Marca_Vehiculo" Role="Marca_Vehiculo" Multiplicity="0..1" />
+          <End Type="RentCarModel.Modelo_Vehiculo" Role="Modelo_Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca_Vehiculo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Modelo_Vehiculo">
+              <PropertyRef Name="marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -642,6 +678,7 @@
           <EntitySetMapping Name="Modelo_Vehiculo">
             <EntityTypeMapping TypeName="RentCarModel.Modelo_Vehiculo">
               <MappingFragment StoreEntitySet="Modelo_Vehiculo">
+                <ScalarProperty Name="marca" ColumnName="marca" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />

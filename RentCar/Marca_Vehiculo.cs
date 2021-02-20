@@ -18,6 +18,7 @@ namespace RentCar
         public Marca_Vehiculo()
         {
             this.Vehiculoes = new HashSet<Vehiculo>();
+            this.Modelo_Vehiculo = new HashSet<Modelo_Vehiculo>();
         }
     
         public int ID { get; set; }
@@ -26,5 +27,7 @@ namespace RentCar
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vehiculo> Vehiculoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Modelo_Vehiculo> Modelo_Vehiculo { get; set; }
     }
 }

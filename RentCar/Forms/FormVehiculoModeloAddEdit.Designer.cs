@@ -1,7 +1,7 @@
 ﻿
 namespace RentCar.Forms
 {
-    partial class FormVehiculoMarcaAddEdit
+    partial class FormVehiculoModeloAddEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,11 @@ namespace RentCar.Forms
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
+            this.modeloVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.marcaVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.modeloVehiculoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaVehiculoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,52 +49,77 @@ namespace RentCar.Forms
             this.label7.Location = new System.Drawing.Point(12, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 31);
-            this.label7.TabIndex = 23;
+            this.label7.TabIndex = 27;
             this.label7.Text = "Agregar";
             // 
             // btnGuardar
             // 
             this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnGuardar.Location = new System.Drawing.Point(158, 91);
+            this.btnGuardar.Location = new System.Drawing.Point(158, 127);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 22;
+            this.btnGuardar.TabIndex = 26;
             this.btnGuardar.Text = "&Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.marcaVehiculoBindingSource, "Descripcion", true));
-            this.txtDescripcion.Location = new System.Drawing.Point(112, 56);
+            this.txtDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.modeloVehiculoBindingSource, "Descripcion", true));
+            this.txtDescripcion.Location = new System.Drawing.Point(112, 92);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
-            this.txtDescripcion.TabIndex = 21;
+            this.txtDescripcion.TabIndex = 25;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 59);
+            this.label1.Location = new System.Drawing.Point(15, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 24;
+            this.label1.TabIndex = 28;
             this.label1.Text = "Descripcion";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Marca";
+            // 
+            // cbMarca
+            // 
+            this.cbMarca.DataSource = this.marcaVehiculoBindingSource;
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Location = new System.Drawing.Point(112, 55);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(121, 21);
+            this.cbMarca.TabIndex = 31;
+            // 
+            // modeloVehiculoBindingSource
+            // 
+            this.modeloVehiculoBindingSource.DataSource = typeof(RentCar.Modelo_Vehiculo);
             // 
             // marcaVehiculoBindingSource
             // 
             this.marcaVehiculoBindingSource.DataSource = typeof(RentCar.Marca_Vehiculo);
             // 
-            // FormVehiculoMarcaAddEdit
+            // FormVehiculoModeloAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(249, 124);
+            this.ClientSize = new System.Drawing.Size(248, 165);
+            this.Controls.Add(this.cbMarca);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
-            this.Name = "FormVehiculoMarcaAddEdit";
-            this.Text = "Agregar/Editar Marca";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormVehiculoMarcaAddEdit_FormClosing);
+            this.Name = "FormVehiculoModeloAddEdit";
+            this.Text = "Agregar/Editar Modelo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormVehiculoModeloAddEdit_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.modeloVehiculoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaVehiculoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -103,6 +132,9 @@ namespace RentCar.Forms
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbMarca;
+        private System.Windows.Forms.BindingSource modeloVehiculoBindingSource;
         private System.Windows.Forms.BindingSource marcaVehiculoBindingSource;
     }
 }

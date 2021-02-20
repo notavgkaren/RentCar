@@ -121,6 +121,18 @@
     <Compile Include="Forms\FormVehiculoMarcaAddEdit.Designer.cs">
       <DependentUpon>FormVehiculoMarcaAddEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormVehiculoModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoModelo.Designer.cs">
+      <DependentUpon>FormVehiculoModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoModeloAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVehiculoModeloAddEdit.Designer.cs">
+      <DependentUpon>FormVehiculoModeloAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormVehiculoTipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +225,12 @@
     <EmbeddedResource Include="Forms\FormVehiculoMarcaAddEdit.resx">
       <DependentUpon>FormVehiculoMarcaAddEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVehiculoModelo.resx">
+      <DependentUpon>FormVehiculoModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVehiculoModeloAddEdit.resx">
+      <DependentUpon>FormVehiculoModeloAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVehiculoTipo.resx">
       <DependentUpon>FormVehiculoTipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +254,7 @@
     <None Include="Properties\DataSources\Cliente.datasource" />
     <None Include="Properties\DataSources\Empleado.datasource" />
     <None Include="Properties\DataSources\Marca_Vehiculo.datasource" />
+    <None Include="Properties\DataSources\Modelo_Vehiculo.datasource" />
     <None Include="Properties\DataSources\Tipo_Vehiculo.datasource" />
     <None Include="Properties\DataSources\Vehiculo.datasource" />
     <None Include="Properties\Settings.settings">
