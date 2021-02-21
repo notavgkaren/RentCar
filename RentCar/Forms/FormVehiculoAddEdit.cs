@@ -44,7 +44,6 @@ namespace RentCar.Forms
                 vehiculoBindingSource.DataSource = new Vehiculo();
                 var c = vehiculoBindingSource.Current as Vehiculo;
                 c.Estado = "Activo";
-                //db.Vehiculoes.Add(c);
             }
             else
             {

@@ -40,7 +40,9 @@ namespace RentCar.Forms
             if (renta == null)
             {
                 //fijar el cb de vehiculo
-                vehiculo = (int)(db.Inspeccions.Select(q => q).OrderByDescending(q=>q.ID).FirstOrDefault()).Vehiculo;
+                var v = db.Inspeccions.Select(q => q).OrderByDescending(q => q.ID).FirstOrDefault();
+                v.Estado = "Rentado";
+                vehiculo = (int)v.Vehiculo;
                 cbVehiculo.SelectedValue = vehiculo;
                 cbVehiculo.Enabled = false;
 

@@ -80,7 +80,7 @@ namespace RentCar
 
         private void modReporte_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormReportes(), sender, "Reportes");
+            OpenChildForm(new Forms.FormReportes(), sender, "Reportes de Rentas");
         }
 
         private void modVehiculos_Click(object sender, EventArgs e)
