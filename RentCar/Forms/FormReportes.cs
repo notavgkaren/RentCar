@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace RentCar.Forms
 {
@@ -117,53 +118,43 @@ namespace RentCar.Forms
 
         private void btnDevolver_Click(object sender, EventArgs e)
         {
-            var dt = (DataTable)dataGridView1.DataSource;
+            string path = "c:\\folder\\export" + DateTime.Now.ToString("yyyyMMdd-HH.mm.ss") + ".csv";
 
-            #region export
-            StringBuilder sb = new StringBuilder();
-            foreach (DataRow dr in dt.Rows)
+            string header = "";
+            foreach(DataGridViewColumn column in dataGridView1.Columns)
             {
-                foreach (DataColumn dc in dt.Columns)
-                    sb.Append(WriteCSV(dr[dc.ColumnName].ToString()) + ",");
-                sb.Remove(sb.Length - 1, 1);
-                sb.AppendLine();
+                header += column.Name + "," ;
             }
-            File.WriteAllText(@"C:\Users\Aaron Martinez\Desktop\export.csv", sb.ToString());
-            MessageBox.Show("Exportado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            #endregion
-        }
+            writeFileHeader(header,path);
 
-        public static string WriteCSV(string input)
-        {
-            try
+            foreach(DataGridViewRow row in dataGridView1.Rows)
             {
-                if (input == null)
-                    return string.Empty;
-
-                bool containsQuote = false;
-                bool containsComma = false;
-                int len = input.Length;
-                for (int i = 0; i < len && (containsComma == false || containsQuote == false); i++)
+                string linea = "";
+                foreach(DataGridViewColumn column in dataGridView1.Columns)
                 {
-                    char ch = input[i];
-                    if (ch == '"')
-                        containsQuote = true;
-                    else if (ch == ',')
-                        containsComma = true;
+                    linea += row.Cells[column.Index].Value + ",";
                 }
-
-                if (containsQuote && containsComma)
-                    input = input.Replace("\"", "\"\"");
-
-                if (containsComma)
-                    return "\"" + input + "\"";
-                else
-                    return input;
+                writeFileLine(linea,path);
             }
-            catch
+
+            Process.Start(@path);            
+        }
+
+        private void writeFileLine(string pLine, string path)
+        {
+            using (System.IO.StreamWriter w = File.AppendText(path))
             {
-                throw;
+                w.WriteLine(pLine);
             }
         }
+        private void writeFileHeader(string pLine,string path)
+        {
+            using (System.IO.StreamWriter w = File.CreateText(path))
+            {
+                w.WriteLine(pLine);
+            }
+        }
+
+        
     }
 }
