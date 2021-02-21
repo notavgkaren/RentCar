@@ -35,12 +35,13 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnRentar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(11, 14);
+            this.txtBuscar.Location = new System.Drawing.Point(106, 13);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(144, 20);
             this.txtBuscar.TabIndex = 34;
@@ -53,6 +54,7 @@
             this.btnEditar.TabIndex = 33;
             this.btnEditar.Text = "&Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnDevolver
             // 
@@ -62,24 +64,27 @@
             this.btnDevolver.TabIndex = 28;
             this.btnDevolver.Text = "&Devolver";
             this.btnDevolver.UseVisualStyleBackColor = true;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
             // btnRecargar
             // 
-            this.btnRecargar.Location = new System.Drawing.Point(242, 12);
+            this.btnRecargar.Location = new System.Drawing.Point(337, 11);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(75, 23);
             this.btnRecargar.TabIndex = 29;
             this.btnRecargar.Text = "&Recargar";
             this.btnRecargar.UseVisualStyleBackColor = true;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(161, 12);
+            this.btnBuscar.Location = new System.Drawing.Point(256, 11);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 30;
             this.btnBuscar.Text = "&Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnRentar
             // 
@@ -89,22 +94,34 @@
             this.btnRentar.TabIndex = 32;
             this.btnRentar.Text = "Ren&tar";
             this.btnRentar.UseVisualStyleBackColor = true;
+            this.btnRentar.Click += new System.EventHandler(this.btnRentar_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 116);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(645, 388);
+            this.dataGridView1.Size = new System.Drawing.Size(645, 313);
             this.dataGridView1.TabIndex = 27;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 16);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(114, 17);
+            this.checkBox1.TabIndex = 35;
+            this.checkBox1.Text = "Busqueda General";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // FormRenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(664, 441);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnDevolver);
@@ -114,6 +131,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormRenta";
             this.Text = "FormRenta";
+            this.Load += new System.EventHandler(this.FormRenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,5 +147,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnRentar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

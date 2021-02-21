@@ -8,6 +8,7 @@ namespace RentCar
 {
     class Utilidades
     {
+        
         public static bool validaCedula(string pCedula)
 
         {
