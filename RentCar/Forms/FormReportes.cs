@@ -93,7 +93,7 @@ namespace RentCar.Forms
             if (rbFechas.Checked)
             {
                 DateTime inicio = dtp1.Value, final = dtp2.Value;
-                ds = ds.Where(q => (q.Renta > inicio && q.Renta < final));
+                ds = ds.Where(q => (q.Renta >= inicio) && (q.Renta <= final));
             }
             if (rbCliente.Checked)
             {

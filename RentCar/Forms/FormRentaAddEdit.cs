@@ -76,16 +76,19 @@ namespace RentCar.Forms
                         }
                     }
                 }
+                //validacion campos numericos
                 if (Convert.ToInt32(txtDias.Text) < 0)
                 {
                     MessageBox.Show("Favor revise los dias.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtDias.Focus();
+                    e.Cancel = true;
                     return;
                 }
                 if (Convert.ToInt32(txtMonto.Text) < 0)
                 {
                     MessageBox.Show("Favor revise el Monto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtMonto.Focus();
+                    e.Cancel = true;
                     return;
                 }
                 //completar edicion

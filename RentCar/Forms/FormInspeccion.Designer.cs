@@ -38,6 +38,7 @@ namespace RentCar.Forms
             this.cbCombustible = new System.Windows.Forms.ComboBox();
             this.cbEmpleado = new System.Windows.Forms.ComboBox();
             this.txtComentario = new System.Windows.Forms.TextBox();
+            this.inspeccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.chkCristal = new System.Windows.Forms.CheckBox();
             this.chkGoma1 = new System.Windows.Forms.CheckBox();
@@ -50,7 +51,6 @@ namespace RentCar.Forms
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbVehiculo = new System.Windows.Forms.ComboBox();
-            this.inspeccionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.inspeccionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +95,7 @@ namespace RentCar.Forms
             // cbCombustible
             // 
             this.cbCombustible.DisplayMember = "ID";
+            this.cbCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCombustible.FormattingEnabled = true;
             this.cbCombustible.Items.AddRange(new object[] {
             "Lleno",
@@ -110,6 +111,7 @@ namespace RentCar.Forms
             // 
             // cbEmpleado
             // 
+            this.cbEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEmpleado.FormattingEnabled = true;
             this.cbEmpleado.Location = new System.Drawing.Point(145, 81);
             this.cbEmpleado.Name = "cbEmpleado";
@@ -124,6 +126,10 @@ namespace RentCar.Forms
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(163, 61);
             this.txtComentario.TabIndex = 10;
+            // 
+            // inspeccionBindingSource
+            // 
+            this.inspeccionBindingSource.DataSource = typeof(RentCar.Inspeccion);
             // 
             // label1
             // 
@@ -254,15 +260,12 @@ namespace RentCar.Forms
             // 
             // cbVehiculo
             // 
+            this.cbVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVehiculo.FormattingEnabled = true;
             this.cbVehiculo.Location = new System.Drawing.Point(145, 54);
             this.cbVehiculo.Name = "cbVehiculo";
             this.cbVehiculo.Size = new System.Drawing.Size(163, 21);
             this.cbVehiculo.TabIndex = 17;
-            // 
-            // inspeccionBindingSource
-            // 
-            this.inspeccionBindingSource.DataSource = typeof(RentCar.Inspeccion);
             // 
             // FormInspeccion
             // 

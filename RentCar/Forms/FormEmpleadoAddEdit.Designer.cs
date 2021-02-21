@@ -70,6 +70,7 @@ namespace RentCar.Forms
             // cbTanda
             // 
             this.cbTanda.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empleadoBindingSource, "Tanda", true));
+            this.cbTanda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTanda.FormattingEnabled = true;
             this.cbTanda.Items.AddRange(new object[] {
             "Matutina",

@@ -32,6 +32,7 @@ namespace RentCar.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClienteAddEdit));
             this.cbTipoPersona = new System.Windows.Forms.ComboBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.txtLimite = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,13 +44,13 @@ namespace RentCar.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cbTipoPersona
             // 
             this.cbTipoPersona.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "TipoPersona", true));
+            this.cbTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoPersona.FormattingEnabled = true;
             this.cbTipoPersona.Items.AddRange(new object[] {
             "Fisica",
@@ -58,6 +59,10 @@ namespace RentCar.Forms
             this.cbTipoPersona.Name = "cbTipoPersona";
             this.cbTipoPersona.Size = new System.Drawing.Size(121, 21);
             this.cbTipoPersona.TabIndex = 4;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(RentCar.Cliente);
             // 
             // label5
             // 
@@ -155,10 +160,6 @@ namespace RentCar.Forms
             this.label7.Size = new System.Drawing.Size(110, 31);
             this.label7.TabIndex = 13;
             this.label7.Text = "Agregar";
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(RentCar.Cliente);
             // 
             // FormClienteAddEdit
             // 

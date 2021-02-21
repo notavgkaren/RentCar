@@ -53,10 +53,12 @@ namespace RentCar.Forms
                     }
                 }
 
+                //validacion campo numerico
                 if (Convert.ToInt32(txtPorciento.Text) < 0)
                 {
                     MessageBox.Show("Favor revise el limite.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtPorciento.Focus();
+                    e.Cancel = true;
                     return;
                 }
 

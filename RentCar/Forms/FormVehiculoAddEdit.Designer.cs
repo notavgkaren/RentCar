@@ -35,6 +35,7 @@ namespace RentCar.Forms
             this.cbCombustible = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtLimite = new System.Windows.Forms.TextBox();
+            this.vehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.txtChasis = new System.Windows.Forms.TextBox();
             this.txtMotor = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@ namespace RentCar.Forms
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.cbModelo = new System.Windows.Forms.ComboBox();
-            this.vehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoCombustibleVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.marcaVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -80,6 +80,8 @@ namespace RentCar.Forms
             // 
             // cbCombustible
             // 
+            this.cbCombustible.DisplayMember = "ID";
+            this.cbCombustible.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCombustible.FormattingEnabled = true;
             this.cbCombustible.Location = new System.Drawing.Point(126, 348);
             this.cbCombustible.Name = "cbCombustible";
@@ -103,6 +105,10 @@ namespace RentCar.Forms
             this.txtLimite.Name = "txtLimite";
             this.txtLimite.Size = new System.Drawing.Size(163, 20);
             this.txtLimite.TabIndex = 19;
+            // 
+            // vehiculoBindingSource
+            // 
+            this.vehiculoBindingSource.DataSource = typeof(RentCar.Vehiculo);
             // 
             // label4
             // 
@@ -194,6 +200,7 @@ namespace RentCar.Forms
             // 
             // cbTipo
             // 
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipo.FormattingEnabled = true;
             this.cbTipo.Location = new System.Drawing.Point(126, 241);
             this.cbTipo.Name = "cbTipo";
@@ -202,6 +209,8 @@ namespace RentCar.Forms
             // 
             // cbMarca
             // 
+            this.cbMarca.DisplayMember = "ID";
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(126, 275);
             this.cbMarca.Name = "cbMarca";
@@ -212,15 +221,12 @@ namespace RentCar.Forms
             // 
             // cbModelo
             // 
+            this.cbModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbModelo.FormattingEnabled = true;
             this.cbModelo.Location = new System.Drawing.Point(126, 312);
             this.cbModelo.Name = "cbModelo";
             this.cbModelo.Size = new System.Drawing.Size(163, 21);
             this.cbModelo.TabIndex = 20;
-            // 
-            // vehiculoBindingSource
-            // 
-            this.vehiculoBindingSource.DataSource = typeof(RentCar.Vehiculo);
             // 
             // tipoCombustibleVehiculoBindingSource
             // 

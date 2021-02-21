@@ -94,6 +94,7 @@ namespace RentCar.Forms
             // 
             // cbMarca
             // 
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(112, 55);
             this.cbMarca.Name = "cbMarca";
