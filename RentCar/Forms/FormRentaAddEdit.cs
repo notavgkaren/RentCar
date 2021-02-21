@@ -76,7 +76,18 @@ namespace RentCar.Forms
                         }
                     }
                 }
-
+                if (Convert.ToInt32(txtDias.Text) < 0)
+                {
+                    MessageBox.Show("Favor revise los dias.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtDias.Focus();
+                    return;
+                }
+                if (Convert.ToInt32(txtMonto.Text) < 0)
+                {
+                    MessageBox.Show("Favor revise el Monto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtMonto.Focus();
+                    return;
+                }
                 //completar edicion
                 var c = rentaBindingSource.Current as Renta;
                 c.Cliente = (int?)cbCliente.SelectedValue;

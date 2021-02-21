@@ -52,6 +52,13 @@ namespace RentCar.Forms
                     }
                 }
 
+                if (Convert.ToInt32(txtLimite.Text)< 0)
+                {
+                    MessageBox.Show("Favor revise el limite.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtLimite.Focus();
+                    return;
+                }
+
                 // validacion de cedula
                 bool valida = Utilidades.validaCedula(txtCedula.Text);
                 if (!valida)

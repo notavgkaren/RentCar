@@ -73,10 +73,13 @@ namespace RentCar.Forms
                          on renta.Cliente equals cliente.ID
                      join vehiculo in db.Vehiculoes.Select(q => q)
                          on renta.Vehiculo equals vehiculo.ID
+                    join tipoVehiculo in db.Tipo_Vehiculo.Select(q=>q)
+                        on vehiculo.Tipo_Vehiculo equals tipoVehiculo.ID
                      select new
                      {
                          ID = renta.ID,
                          Vehiculo = vehiculo.Descripcion,
+                         TipoVehiculo = tipoVehiculo.Descripcion,
                          Estado = renta.Estado,
                          Dias = renta.CantDias,
                          Renta = renta.FechaRenta,
@@ -101,19 +104,7 @@ namespace RentCar.Forms
             }
             if (rbVehiculos.Checked)
             {
-                var tipos = from renta in ds
-                            join vehiculo in db.Vehiculoes.Select(q => q)
-                                on renta.Vehiculo equals vehiculo.Descripcion
-                            join tipo in db.Tipo_Vehiculo.Select(q => q)
-                                on vehiculo.Tipo_Vehiculo equals tipo.ID
-                            select new
-                            {
-                                tipo = tipo.ID,
-                                vehiculo = vehiculo.Descripcion
-                            };
-                var tipoVehiculo = tipos.Where(q => q.tipo == (int)cbVehiculos.SelectedValue).Select(q => q.vehiculo).FirstOrDefault();
-
-                ds = ds.Where(q => q.Vehiculo.Equals(tipoVehiculo));
+                ds = ds.Where(q => q.TipoVehiculo.Equals(cbVehiculos.Text));
             }
             //map columns
             dataGridView1.DataSource = ds.ToList();
